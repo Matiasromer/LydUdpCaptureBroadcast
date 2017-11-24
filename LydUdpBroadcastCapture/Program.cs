@@ -12,46 +12,56 @@ namespace LydUdpBroadcastCapture
     class Program
     {
 
-        
-
+        private const int port = 7000;
+        // Virker for Soap
         static void Main(string[] args)
         {
+            
+            
             Start();
             Console.ReadKey();
         }
         private static void Start()
         {
-            //hiver webserviceen ind (husk at kigge efter navnet i app-config og paste det ind)
+
             using (var reciever = new LydReference1.Service1Client("BasicHttpBinding_IService1"))
             {
-                int port = 7000;
-                //192.168.1.7
-                //bruger udpclient da dataen bliver broadcastet fra raspen og
-                //giver clienten portnummeret, i det her tilfælde 7000(Skal matche det i raspen)
-                using (UdpClient client = new UdpClient(port))
+
+
+                using (UdpClient client = new UdpClient(new IPEndPoint(IPAddress.Any, port)))
                 {
+
+                    IPEndPoint remoteEndPoint = new IPEndPoint(0, 0);
                     while (true)
                     {
-                        //beder den om at lytte på alle adresser og port 7000 
-                        IPEndPoint endpoint = new IPEndPoint(IPAddress.Any, port);
 
-                        //lægger det modtagede data ned i et byte-array
-                        //som modtages fra clientens endpoint
-                        byte[] recieved = client.Receive(ref endpoint);
-                        //skriver adressen og portnummeret ud i konsollen
-                        Console.WriteLine("Modtaget fra: " + endpoint.Address + " På Port: " + endpoint.Port);
+                        Console.WriteLine("Waiting for broadcast {0}", client.Client.LocalEndPoint);
+                        byte[] datagramReceived = client.Receive(ref remoteEndPoint);
 
-                        //laver byte-arrayet om til en string.
-                        string str = Encoding.ASCII.GetString(recieved);
-                        Console.WriteLine("Sender: " + str);
+                        string str = Encoding.ASCII.GetString(datagramReceived, 0, datagramReceived.Length);
+                        Console.WriteLine("Receives {0} bytes from {1} port {2} message {3}", datagramReceived.Length,
+                            remoteEndPoint.Address, remoteEndPoint.Port, str);
+                        
 
-                        //sender tekst fra raspen gennem soapservicen til databasen
+
                         reciever.PostLydToList(str);
                     }
                 }
             }
         }
+        private static void Parse(string response)
+        {
+            string[] parts = response.Split(' ');
+            foreach (string part in parts)
+            {
+                Console.WriteLine(part);
+            }
+            string lydLine = parts[6];
+            string lydStr = lydLine.Substring(lydLine.IndexOf(": ") + 2);
+            Console.WriteLine(lydStr);
+        }
     }
+
 
 }
                 

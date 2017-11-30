@@ -12,7 +12,7 @@ namespace LydUdpBroadcastCapture
     class Program
     {
 
-        private const int port = 7000;
+        private const int port = 11001;
         // Virker for Soap
         static void Main(string[] args)
         {

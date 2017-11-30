@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LydUdpBroadcastCapture.LydReference1 {
+namespace LydUdpBroadcastCapture.ServiceReferenceLocalhost {
     using System.Runtime.Serialization;
     using System;
     
@@ -91,7 +91,7 @@ namespace LydUdpBroadcastCapture.LydReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LydReference1.IService1")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceLocalhost.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PostLydToList", ReplyAction="http://tempuri.org/IService1/PostLydToListResponse")]
@@ -101,10 +101,10 @@ namespace LydUdpBroadcastCapture.LydReference1 {
         System.Threading.Tasks.Task<int> PostLydToListAsync(string lyd);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllLyd", ReplyAction="http://tempuri.org/IService1/GetAllLydResponse")]
-        LydUdpBroadcastCapture.LydReference1.Lyd[] GetAllLyd();
+        LydUdpBroadcastCapture.ServiceReferenceLocalhost.Lyd[] GetAllLyd();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllLyd", ReplyAction="http://tempuri.org/IService1/GetAllLydResponse")]
-        System.Threading.Tasks.Task<LydUdpBroadcastCapture.LydReference1.Lyd[]> GetAllLydAsync();
+        System.Threading.Tasks.Task<LydUdpBroadcastCapture.ServiceReferenceLocalhost.Lyd[]> GetAllLydAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/TjekStatus", ReplyAction="http://tempuri.org/IService1/TjekStatusResponse")]
         bool TjekStatus();
@@ -114,12 +114,12 @@ namespace LydUdpBroadcastCapture.LydReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : LydUdpBroadcastCapture.LydReference1.IService1, System.ServiceModel.IClientChannel {
+    public interface IService1Channel : LydUdpBroadcastCapture.ServiceReferenceLocalhost.IService1, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<LydUdpBroadcastCapture.LydReference1.IService1>, LydUdpBroadcastCapture.LydReference1.IService1 {
+    public partial class Service1Client : System.ServiceModel.ClientBase<LydUdpBroadcastCapture.ServiceReferenceLocalhost.IService1>, LydUdpBroadcastCapture.ServiceReferenceLocalhost.IService1 {
         
         public Service1Client() {
         }
@@ -148,11 +148,11 @@ namespace LydUdpBroadcastCapture.LydReference1 {
             return base.Channel.PostLydToListAsync(lyd);
         }
         
-        public LydUdpBroadcastCapture.LydReference1.Lyd[] GetAllLyd() {
+        public LydUdpBroadcastCapture.ServiceReferenceLocalhost.Lyd[] GetAllLyd() {
             return base.Channel.GetAllLyd();
         }
         
-        public System.Threading.Tasks.Task<LydUdpBroadcastCapture.LydReference1.Lyd[]> GetAllLydAsync() {
+        public System.Threading.Tasks.Task<LydUdpBroadcastCapture.ServiceReferenceLocalhost.Lyd[]> GetAllLydAsync() {
             return base.Channel.GetAllLydAsync();
         }
         

@@ -21,7 +21,7 @@ namespace TestSender
         {
             while (true)
             {
-                Lyd newlyd = new Lyd() { Lyde = "55", Id = 2 };
+                Lyd newlyd = new Lyd() { Lyde = "90", Id = 2 };
 
                 IPEndPoint ep = new IPEndPoint(IPAddress.Loopback, 7000);
                 UdpClient sender = new UdpClient();

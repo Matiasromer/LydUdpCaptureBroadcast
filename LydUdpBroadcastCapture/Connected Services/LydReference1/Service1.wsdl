@@ -38,6 +38,18 @@
   <wsdl:message name="IService1_PostLydToList_OutputMessage">
     <wsdl:part name="parameters" element="tns:PostLydToListResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_SetIdSted_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetIdSted" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SetIdSted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetIdStedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_usestedid_InputMessage">
+    <wsdl:part name="parameters" element="tns:usestedid" />
+  </wsdl:message>
+  <wsdl:message name="IService1_usestedid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:usestedidResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetAllLyd_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllLyd" />
   </wsdl:message>
@@ -50,10 +62,48 @@
   <wsdl:message name="IService1_TjekStatus_OutputMessage">
     <wsdl:part name="parameters" element="tns:TjekStatusResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_Updat2_InputMessage">
+    <wsdl:part name="parameters" element="tns:Updat2" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Updat2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Updat2Response" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAlllydSorted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlllydSorted" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAlllydSorted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlllydSortedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAlllydSted2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlllydSted2" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAlllydSted2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlllydSted2Response" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllPersonale_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPersonale" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllPersonale_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPersonaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllLydMedSted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLydMedSted" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllLydMedSted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLydMedStedResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="PostLydToList">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/PostLydToList" message="tns:IService1_PostLydToList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/PostLydToListResponse" message="tns:IService1_PostLydToList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetIdSted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SetIdSted" message="tns:IService1_SetIdSted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SetIdStedResponse" message="tns:IService1_SetIdSted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="usestedid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/usestedid" message="tns:IService1_usestedid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/usestedidResponse" message="tns:IService1_usestedid_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllLyd">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllLyd" message="tns:IService1_GetAllLyd_InputMessage" />
@@ -63,11 +113,49 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/TjekStatus" message="tns:IService1_TjekStatus_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/TjekStatusResponse" message="tns:IService1_TjekStatus_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Updat2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Updat2" message="tns:IService1_Updat2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Updat2Response" message="tns:IService1_Updat2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlllydSorted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAlllydSorted" message="tns:IService1_GetAlllydSorted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAlllydSortedResponse" message="tns:IService1_GetAlllydSorted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlllydSted2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAlllydSted2" message="tns:IService1_GetAlllydSted2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAlllydSted2Response" message="tns:IService1_GetAlllydSted2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPersonale">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllPersonale" message="tns:IService1_GetAllPersonale_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllPersonaleResponse" message="tns:IService1_GetAllPersonale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLydMedSted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllLydMedSted" message="tns:IService1_GetAllLydMedSted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllLydMedStedResponse" message="tns:IService1_GetAllLydMedSted_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="PostLydToList">
       <soap:operation soapAction="http://tempuri.org/IService1/PostLydToList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetIdSted">
+      <soap:operation soapAction="http://tempuri.org/IService1/SetIdSted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usestedid">
+      <soap:operation soapAction="http://tempuri.org/IService1/usestedid" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -86,6 +174,51 @@
     </wsdl:operation>
     <wsdl:operation name="TjekStatus">
       <soap:operation soapAction="http://tempuri.org/IService1/TjekStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Updat2">
+      <soap:operation soapAction="http://tempuri.org/IService1/Updat2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlllydSorted">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAlllydSorted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlllydSted2">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAlllydSted2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPersonale">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllPersonale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLydMedSted">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllLydMedSted" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -106,6 +239,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SetIdSted">
+      <soap:operation soapAction="http://tempuri.org/IService1/SetIdSted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="usestedid">
+      <soap:operation soapAction="http://tempuri.org/IService1/usestedid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetAllLyd">
       <soap:operation soapAction="http://tempuri.org/IService1/GetAllLyd" style="document" />
       <wsdl:input>
@@ -117,6 +268,51 @@
     </wsdl:operation>
     <wsdl:operation name="TjekStatus">
       <soap:operation soapAction="http://tempuri.org/IService1/TjekStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Updat2">
+      <soap:operation soapAction="http://tempuri.org/IService1/Updat2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlllydSorted">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAlllydSorted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlllydSted2">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAlllydSted2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPersonale">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllPersonale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLydMedSted">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllLydMedSted" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

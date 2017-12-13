@@ -11,7 +11,22 @@
       <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Lyde" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sted" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Lyd" nillable="true" type="tns:Lyd" />
+  <xs:complexType name="ArrayOfPersonale">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Personale" nillable="true" type="tns:Personale" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPersonale" nillable="true" type="tns:ArrayOfPersonale" />
+  <xs:complexType name="Personale">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Navn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telf" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Personale" nillable="true" type="tns:Personale" />
 </xs:schema>

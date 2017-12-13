@@ -31,6 +31,9 @@ namespace LydUdpBroadcastCapture.LydReference1 {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string LydeField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StedField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -80,6 +83,96 @@ namespace LydUdpBroadcastCapture.LydReference1 {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Sted {
+            get {
+                return this.StedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StedField, value) != true)) {
+                    this.StedField = value;
+                    this.RaisePropertyChanged("Sted");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Personale", Namespace="http://schemas.datacontract.org/2004/07/LydSemesterModtagBroadcast")]
+    [System.SerializableAttribute()]
+    public partial class Personale : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NavnField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TelfField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Navn {
+            get {
+                return this.NavnField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NavnField, value) != true)) {
+                    this.NavnField = value;
+                    this.RaisePropertyChanged("Navn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Telf {
+            get {
+                return this.TelfField;
+            }
+            set {
+                if ((this.TelfField.Equals(value) != true)) {
+                    this.TelfField = value;
+                    this.RaisePropertyChanged("Telf");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -100,6 +193,18 @@ namespace LydUdpBroadcastCapture.LydReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/PostLydToList", ReplyAction="http://tempuri.org/IService1/PostLydToListResponse")]
         System.Threading.Tasks.Task<int> PostLydToListAsync(string lyd);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SetIdSted", ReplyAction="http://tempuri.org/IService1/SetIdStedResponse")]
+        int SetIdSted(string SetId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SetIdSted", ReplyAction="http://tempuri.org/IService1/SetIdStedResponse")]
+        System.Threading.Tasks.Task<int> SetIdStedAsync(string SetId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/usestedid", ReplyAction="http://tempuri.org/IService1/usestedidResponse")]
+        int usestedid();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/usestedid", ReplyAction="http://tempuri.org/IService1/usestedidResponse")]
+        System.Threading.Tasks.Task<int> usestedidAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllLyd", ReplyAction="http://tempuri.org/IService1/GetAllLydResponse")]
         LydUdpBroadcastCapture.LydReference1.Lyd[] GetAllLyd();
         
@@ -111,6 +216,36 @@ namespace LydUdpBroadcastCapture.LydReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/TjekStatus", ReplyAction="http://tempuri.org/IService1/TjekStatusResponse")]
         System.Threading.Tasks.Task<bool> TjekStatusAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Updat2", ReplyAction="http://tempuri.org/IService1/Updat2Response")]
+        void Updat2();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Updat2", ReplyAction="http://tempuri.org/IService1/Updat2Response")]
+        System.Threading.Tasks.Task Updat2Async();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAlllydSorted", ReplyAction="http://tempuri.org/IService1/GetAlllydSortedResponse")]
+        LydUdpBroadcastCapture.LydReference1.Lyd[] GetAlllydSorted();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAlllydSorted", ReplyAction="http://tempuri.org/IService1/GetAlllydSortedResponse")]
+        System.Threading.Tasks.Task<LydUdpBroadcastCapture.LydReference1.Lyd[]> GetAlllydSortedAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAlllydSted2", ReplyAction="http://tempuri.org/IService1/GetAlllydSted2Response")]
+        LydUdpBroadcastCapture.LydReference1.Lyd[] GetAlllydSted2();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAlllydSted2", ReplyAction="http://tempuri.org/IService1/GetAlllydSted2Response")]
+        System.Threading.Tasks.Task<LydUdpBroadcastCapture.LydReference1.Lyd[]> GetAlllydSted2Async();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllPersonale", ReplyAction="http://tempuri.org/IService1/GetAllPersonaleResponse")]
+        LydUdpBroadcastCapture.LydReference1.Personale[] GetAllPersonale();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllPersonale", ReplyAction="http://tempuri.org/IService1/GetAllPersonaleResponse")]
+        System.Threading.Tasks.Task<LydUdpBroadcastCapture.LydReference1.Personale[]> GetAllPersonaleAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllLydMedSted", ReplyAction="http://tempuri.org/IService1/GetAllLydMedStedResponse")]
+        LydUdpBroadcastCapture.LydReference1.Lyd[] GetAllLydMedSted();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllLydMedSted", ReplyAction="http://tempuri.org/IService1/GetAllLydMedStedResponse")]
+        System.Threading.Tasks.Task<LydUdpBroadcastCapture.LydReference1.Lyd[]> GetAllLydMedStedAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -148,6 +283,22 @@ namespace LydUdpBroadcastCapture.LydReference1 {
             return base.Channel.PostLydToListAsync(lyd);
         }
         
+        public int SetIdSted(string SetId) {
+            return base.Channel.SetIdSted(SetId);
+        }
+        
+        public System.Threading.Tasks.Task<int> SetIdStedAsync(string SetId) {
+            return base.Channel.SetIdStedAsync(SetId);
+        }
+        
+        public int usestedid() {
+            return base.Channel.usestedid();
+        }
+        
+        public System.Threading.Tasks.Task<int> usestedidAsync() {
+            return base.Channel.usestedidAsync();
+        }
+        
         public LydUdpBroadcastCapture.LydReference1.Lyd[] GetAllLyd() {
             return base.Channel.GetAllLyd();
         }
@@ -162,6 +313,46 @@ namespace LydUdpBroadcastCapture.LydReference1 {
         
         public System.Threading.Tasks.Task<bool> TjekStatusAsync() {
             return base.Channel.TjekStatusAsync();
+        }
+        
+        public void Updat2() {
+            base.Channel.Updat2();
+        }
+        
+        public System.Threading.Tasks.Task Updat2Async() {
+            return base.Channel.Updat2Async();
+        }
+        
+        public LydUdpBroadcastCapture.LydReference1.Lyd[] GetAlllydSorted() {
+            return base.Channel.GetAlllydSorted();
+        }
+        
+        public System.Threading.Tasks.Task<LydUdpBroadcastCapture.LydReference1.Lyd[]> GetAlllydSortedAsync() {
+            return base.Channel.GetAlllydSortedAsync();
+        }
+        
+        public LydUdpBroadcastCapture.LydReference1.Lyd[] GetAlllydSted2() {
+            return base.Channel.GetAlllydSted2();
+        }
+        
+        public System.Threading.Tasks.Task<LydUdpBroadcastCapture.LydReference1.Lyd[]> GetAlllydSted2Async() {
+            return base.Channel.GetAlllydSted2Async();
+        }
+        
+        public LydUdpBroadcastCapture.LydReference1.Personale[] GetAllPersonale() {
+            return base.Channel.GetAllPersonale();
+        }
+        
+        public System.Threading.Tasks.Task<LydUdpBroadcastCapture.LydReference1.Personale[]> GetAllPersonaleAsync() {
+            return base.Channel.GetAllPersonaleAsync();
+        }
+        
+        public LydUdpBroadcastCapture.LydReference1.Lyd[] GetAllLydMedSted() {
+            return base.Channel.GetAllLydMedSted();
+        }
+        
+        public System.Threading.Tasks.Task<LydUdpBroadcastCapture.LydReference1.Lyd[]> GetAllLydMedStedAsync() {
+            return base.Channel.GetAllLydMedStedAsync();
         }
     }
 }

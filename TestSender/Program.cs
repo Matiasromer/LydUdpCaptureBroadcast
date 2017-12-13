@@ -10,7 +10,7 @@ namespace TestSender
 {
     class Program
     {
-        // virker for Soap
+        // virker for Soap, Tester ved at indsætte en lyd.
         static void Main(string[] args)
         {
             Start();
@@ -23,7 +23,7 @@ namespace TestSender
             {
                 Lyd newlyd = new Lyd() { Lyde = "90", Id = 2 };
 
-                IPEndPoint ep = new IPEndPoint(IPAddress.Loopback, 7000);
+                IPEndPoint ep = new IPEndPoint(IPAddress.Loopback, 11001);
                 UdpClient sender = new UdpClient();
 
                 byte[] data = Encoding.ASCII.GetBytes(newlyd.ToString());
